@@ -18,3 +18,12 @@ section{width:min(1180px,90vw);margin:auto;padding:105px 0;position:relative}.he
 @media(max-width:900px){nav{display:none}.heroGrid,.about{grid-template-columns:1fr;gap:45px}.architecture-map{height:560px}.flow-svg{height:520px}.map-node{left:50%;width:175px}.map-node:nth-of-type(n){top:calc(7% + var(--i)*16%)}.map-node:nth-of-type(n){transform:translate(-50%,-50%)}.map-node:hover{transform:translate(-50%,-50%) scale(1.03)}.ticker{gap:20px;justify-content:flex-start}.ticker span:nth-child(n+6){display:none}}
 @media(max-width:620px){section{padding:75px 0}.hero{padding-top:80px}.hero h1{font-size:48px}.lead{font-size:15px}.feature{padding:28px;border-radius:24px}.cards,.stack{grid-template-columns:1fr}.about li b{display:block;width:auto;margin-bottom:5px}.ticker span:nth-child(n+4){display:none}footer{flex-direction:column;gap:10px}.hero-ring{opacity:.5}.architecture-map{height:640px}.map-node{width:82%;max-width:260px}.flow-svg{display:none}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero-glow,.hero-ring,.hero aside:after,.status-dot,.feature-orbit,.signal span,.flow-svg path{animation:none}[data-reveal]{opacity:1;transform:none;transition:none}.btn,.card,.feature,.map-node{transition:none}.data-canvas{display:none}}
+/* Straight architecture flow */
+.architecture-map{height:250px;margin-top:32px;background:radial-gradient(circle at 50% 50%,#d7ff5707,transparent 55%),#0a0e12}
+.flow-svg{inset:0 4%;width:92%;height:250px}
+.flow-svg path{d:path("M70 125 L1030 125");stroke:#d7ff5730;stroke-width:1.5;stroke-dasharray:5 9}
+.flow-svg .flow-secondary{d:path("M70 125 L1030 125");stroke:#d7ff570b;stroke-dasharray:2 14}
+.map-node{top:50%!important;left:calc(5% + var(--i)*18%)!important;transform:translateY(-50%)!important;width:145px;min-height:92px}
+.map-node:hover{transform:translateY(-50%) scale(1.04)!important}
+@media(max-width:900px){.architecture-map{height:520px}.flow-svg{height:520px}.flow-svg path,.flow-svg .flow-secondary{d:path("M550 35 L550 485")}.map-node{left:50%!important;top:calc(8% + var(--i)*16.5%)!important;width:175px}.map-node:hover{transform:translate(-50%,-50%) scale(1.03)!important}}
+@media(max-width:620px){.architecture-map{height:600px}.flow-svg{height:600px}.flow-svg path,.flow-svg .flow-secondary{d:path("M550 25 L550 575")}.map-node{top:calc(8% + var(--i)*16.5%)!important;width:82%;max-width:260px}.flow-svg{display:block}}
