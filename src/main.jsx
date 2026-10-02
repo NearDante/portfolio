@@ -103,11 +103,18 @@ function App(){
     <div className="heading" data-reveal><h2><span>03</span> System architecture</h2><small>SEARCH-DATA-PIPELINE</small></div>
     <p className="muted" data-reveal>A streaming path from event ingestion to queryable features.</p>
     <div className="architecture-map" data-reveal>
-     <svg className="flow-svg" viewBox="0 0 1100 260" preserveAspectRatio="none" aria-hidden="true">
-      <path d="M70 130 C190 20 250 240 360 130 S530 20 650 130 S820 240 930 130 S1030 70 1050 130"/>
-      <path className="flow-secondary" d="M70 145 C190 35 250 255 360 145 S530 35 650 145 S820 255 930 145 S1030 85 1050 145"/>
+     <svg className="flow-beam" viewBox="0 0 1200 180" preserveAspectRatio="none" aria-hidden="true">
+      <path className="beam-track" d="M20 90 H1180"/>
+      <path className="beam-glow" d="M20 90 H1180"/>
+      <circle r="3" fill="currentColor"><animateMotion dur="3.8s" repeatCount="indefinite" path="M20 90 H1180"/></circle>
+      <circle r="2" fill="currentColor" opacity=".7"><animateMotion dur="3.8s" begin="1.9s" repeatCount="indefinite" path="M20 90 H1180"/></circle>
      </svg>
-     {pipeline.map((x,i)=><div className="map-node" key={x[1]} style={{'--i':i}}><span>{x[0]}</span><div><strong>{x[1]}</strong><p>{x[2]}</p></div></div>)}
+     <div className="architecture-flow">
+      {pipeline.map((x,i)=><React.Fragment key={x[1]}>
+       <div className="map-node" style={{'--i':i}}><span>{x[0]}</span><div><strong>{x[1]}</strong><p>{x[2]}</p></div></div>
+       {i<5&&<span className="flow-arrow">→</span>}
+      </React.Fragment>)}
+     </div>
     </div>
    </section>
 
